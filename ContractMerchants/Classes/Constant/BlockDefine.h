@@ -11,4 +11,4 @@
 
 typedef void (^Block) (void);
 
-#endif /* blockDefine_h */
+#endif

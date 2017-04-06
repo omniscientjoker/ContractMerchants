@@ -36,6 +36,9 @@ objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 //图片高度不失真
 #define SCREENHEIGHTPX(X) (SCREENWIDTH*(X)/1242.0)
 
+//以下通用Block
+#define JMBlockSafeRun(block, ...) block ? block(__VA_ARGS__) : nil
+
 
 //断言加返回
 #define SitAbort       HCAbort();return;

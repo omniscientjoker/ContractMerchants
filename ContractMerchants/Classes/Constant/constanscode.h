@@ -15,4 +15,4 @@
 #define KEYYOUMENGCHANNELID          @"mobile"
 
 
-#endif /* constanscode_h */
+#endif

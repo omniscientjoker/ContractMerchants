@@ -13,6 +13,8 @@
 		F30732EA1E94F207005878F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30732E91E94F207005878F0 /* Assets.xcassets */; };
 		F30732F81E94F207005878F0 /* ContractMerchantsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F30732F71E94F207005878F0 /* ContractMerchantsTests.m */; };
 		F30733031E94F207005878F0 /* ContractMerchantsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F30733021E94F207005878F0 /* ContractMerchantsUITests.m */; };
+		F37518AB1E95DBC400CA4E2E /* UITextField+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */; };
+		F37518B21E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518B11E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m */; };
 		F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A51E94F6850027D926 /* BaesTableViewCell.m */; };
 		F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A91E94F6850027D926 /* BaseTableView.m */; };
 		F3C116E21E94F6850027D926 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116AB1E94F6850027D926 /* BaseViewController.m */; };
@@ -31,6 +33,12 @@
 		F3C116F01E94F6850027D926 /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116DA1E94F6850027D926 /* VerifyView.m */; };
 		F3C116F11E94F6850027D926 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116DD1E94F6850027D926 /* MineViewController.m */; };
 		F3C116F51E94F89E0027D926 /* UIToolViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116F41E94F89E0027D926 /* UIToolViewTextField.m */; };
+		F3C116FB1E95CFA70027D926 /* BasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116FA1E95CFA70027D926 /* BasePageViewController.m */; };
+		F3C116FF1E95D28E0027D926 /* JMHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116FE1E95D28E0027D926 /* JMHTTPResponse.m */; };
+		F3C117021E95D2C00027D926 /* JMHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C117011E95D2C00027D926 /* JMHTTPSessionManager.m */; };
+		F3C117051E95D40D0027D926 /* JMNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C117041E95D40D0027D926 /* JMNetworkReachabilityManager.m */; };
+		F3C117091E95D51F0027D926 /* NSDictionary+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C117081E95D51F0027D926 /* NSDictionary+Common.m */; };
+		F3C117111E95D6730027D926 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C117101E95D6730027D926 /* NSString+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +73,10 @@
 		F30732FE1E94F207005878F0 /* ContractMerchantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContractMerchantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30733021E94F207005878F0 /* ContractMerchantsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContractMerchantsUITests.m; sourceTree = "<group>"; };
 		F30733041E94F207005878F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F37518A91E95DBC400CA4E2E /* UITextField+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Common.h"; sourceTree = "<group>"; };
+		F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Common.m"; sourceTree = "<group>"; };
+		F37518B01E95DCE200CA4E2E /* IPhoneAndPwdSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneAndPwdSingleton.h; sourceTree = "<group>"; };
+		F37518B11E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneAndPwdSingleton.m; sourceTree = "<group>"; };
 		F3C116A01E94F5ED0027D926 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F3C116A41E94F6850027D926 /* BaesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaesTableViewCell.h; sourceTree = "<group>"; };
 		F3C116A51E94F6850027D926 /* BaesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaesTableViewCell.m; sourceTree = "<group>"; };
@@ -106,6 +118,18 @@
 		F3C116DD1E94F6850027D926 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		F3C116F31E94F89E0027D926 /* UIToolViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIToolViewTextField.h; sourceTree = "<group>"; };
 		F3C116F41E94F89E0027D926 /* UIToolViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIToolViewTextField.m; sourceTree = "<group>"; };
+		F3C116F91E95CFA70027D926 /* BasePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePageViewController.h; sourceTree = "<group>"; };
+		F3C116FA1E95CFA70027D926 /* BasePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePageViewController.m; sourceTree = "<group>"; };
+		F3C116FD1E95D28E0027D926 /* JMHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMHTTPResponse.h; sourceTree = "<group>"; };
+		F3C116FE1E95D28E0027D926 /* JMHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMHTTPResponse.m; sourceTree = "<group>"; };
+		F3C117001E95D2C00027D926 /* JMHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMHTTPSessionManager.h; sourceTree = "<group>"; };
+		F3C117011E95D2C00027D926 /* JMHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMHTTPSessionManager.m; sourceTree = "<group>"; };
+		F3C117031E95D40D0027D926 /* JMNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		F3C117041E95D40D0027D926 /* JMNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		F3C117071E95D51F0027D926 /* NSDictionary+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Common.h"; sourceTree = "<group>"; };
+		F3C117081E95D51F0027D926 /* NSDictionary+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Common.m"; sourceTree = "<group>"; };
+		F3C1170F1E95D6730027D926 /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		F3C117101E95D6730027D926 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		F91C9D4AF30701F4F2433356 /* Pods-ContractMerchants.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContractMerchants.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContractMerchants/Pods-ContractMerchants.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +238,15 @@
 			path = ContractMerchantsUITests;
 			sourceTree = "<group>";
 		};
+		F37518AF1E95DCE200CA4E2E /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				F37518B01E95DCE200CA4E2E /* IPhoneAndPwdSingleton.h */,
+				F37518B11E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m */,
+			);
+			path = Validate;
+			sourceTree = "<group>";
+		};
 		F3C1169D1E94F56C0027D926 /* Img sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,12 +298,14 @@
 		F3C116A31E94F6850027D926 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F3C116A41E94F6850027D926 /* BaesTableViewCell.h */,
-				F3C116A51E94F6850027D926 /* BaesTableViewCell.m */,
 				F3C116A81E94F6850027D926 /* BaseTableView.h */,
 				F3C116A91E94F6850027D926 /* BaseTableView.m */,
+				F3C116A41E94F6850027D926 /* BaesTableViewCell.h */,
+				F3C116A51E94F6850027D926 /* BaesTableViewCell.m */,
 				F3C116AA1E94F6850027D926 /* BaseViewController.h */,
 				F3C116AB1E94F6850027D926 /* BaseViewController.m */,
+				F3C116F91E95CFA70027D926 /* BasePageViewController.h */,
+				F3C116FA1E95CFA70027D926 /* BasePageViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -283,6 +318,8 @@
 				F3C116B31E94F6850027D926 /* UIView */,
 				F3C116F21E94F8730027D926 /* UITextFiled */,
 				F3C116BA1E94F6850027D926 /* UIViewController */,
+				F3C1170E1E95D6410027D926 /* NSString */,
+				F3C117061E95D4FF0027D926 /* NSDictionary */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -337,9 +374,9 @@
 		F3C116C01E94F6850027D926 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				F3C116C31E94F6850027D926 /* constants.h */,
 				F3C116C11E94F6850027D926 /* BlockDefine.h */,
 				F3C116C21E94F6850027D926 /* constanscode.h */,
-				F3C116C31E94F6850027D926 /* constants.h */,
 				F3C116C41E94F6850027D926 /* noticeConstant.h */,
 			);
 			path = Constant;
@@ -348,6 +385,7 @@
 		F3C116C51E94F6850027D926 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				F3C116FC1E95D25C0027D926 /* MOCNetworking */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -376,6 +414,7 @@
 		F3C116CE1E94F6850027D926 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F37518AF1E95DCE200CA4E2E /* Validate */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -441,8 +480,41 @@
 			children = (
 				F3C116F31E94F89E0027D926 /* UIToolViewTextField.h */,
 				F3C116F41E94F89E0027D926 /* UIToolViewTextField.m */,
+				F37518A91E95DBC400CA4E2E /* UITextField+Common.h */,
+				F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */,
 			);
 			path = UITextFiled;
+			sourceTree = "<group>";
+		};
+		F3C116FC1E95D25C0027D926 /* MOCNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F3C116FD1E95D28E0027D926 /* JMHTTPResponse.h */,
+				F3C116FE1E95D28E0027D926 /* JMHTTPResponse.m */,
+				F3C117001E95D2C00027D926 /* JMHTTPSessionManager.h */,
+				F3C117011E95D2C00027D926 /* JMHTTPSessionManager.m */,
+				F3C117031E95D40D0027D926 /* JMNetworkReachabilityManager.h */,
+				F3C117041E95D40D0027D926 /* JMNetworkReachabilityManager.m */,
+			);
+			path = MOCNetworking;
+			sourceTree = "<group>";
+		};
+		F3C117061E95D4FF0027D926 /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				F3C117071E95D51F0027D926 /* NSDictionary+Common.h */,
+				F3C117081E95D51F0027D926 /* NSDictionary+Common.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		F3C1170E1E95D6410027D926 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				F3C1170F1E95D6730027D926 /* NSString+Common.h */,
+				F3C117101E95D6730027D926 /* NSString+Common.m */,
+			);
+			path = NSString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,10 +704,12 @@
 			files = (
 				F3C116E61E94F6850027D926 /* UIView+HUDExtensions.m in Sources */,
 				F3C116E31E94F6850027D926 /* UIColor+RGBValues.m in Sources */,
+				F37518B21E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m in Sources */,
 				F3C116EB1E94F6850027D926 /* BaseUser.m in Sources */,
 				F30732E81E94F207005878F0 /* AppDelegate.m in Sources */,
 				F3C116F51E94F89E0027D926 /* UIToolViewTextField.m in Sources */,
 				F3C116E91E94F6850027D926 /* common.m in Sources */,
+				F3C117111E95D6730027D926 /* NSString+Common.m in Sources */,
 				F3C116E51E94F6850027D926 /* UIView+additions.m in Sources */,
 				F3C116E41E94F6850027D926 /* UIImage+blur.m in Sources */,
 				F3C116ED1E94F6850027D926 /* LoginViewController.m in Sources */,
@@ -644,12 +718,18 @@
 				F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */,
 				F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */,
 				F3C116EA1E94F6850027D926 /* BaseModel.m in Sources */,
+				F3C117051E95D40D0027D926 /* JMNetworkReachabilityManager.m in Sources */,
 				F3C116F11E94F6850027D926 /* MineViewController.m in Sources */,
 				F3C116F01E94F6850027D926 /* VerifyView.m in Sources */,
+				F3C116FB1E95CFA70027D926 /* BasePageViewController.m in Sources */,
 				F3C116EF1E94F6850027D926 /* LoginView.m in Sources */,
 				F3C116EE1E94F6850027D926 /* LoginHandle.m in Sources */,
 				F3C116EC1E94F6850027D926 /* LoginUser.m in Sources */,
 				F3C116E71E94F6850027D926 /* UIView+instrument.m in Sources */,
+				F3C117091E95D51F0027D926 /* NSDictionary+Common.m in Sources */,
+				F37518AB1E95DBC400CA4E2E /* UITextField+Common.m in Sources */,
+				F3C117021E95D2C00027D926 /* JMHTTPSessionManager.m in Sources */,
+				F3C116FF1E95D28E0027D926 /* JMHTTPResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,6 +869,29 @@
 				GCC_PREFIX_HEADER = ContractMerchants/PrefixHeader.pch;
 				INFOPLIST_FILE = ContractMerchants/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"Mantle\"",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				OTHER_LIBTOOLFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JM.ContractMerchants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -804,6 +907,29 @@
 				GCC_PREFIX_HEADER = ContractMerchants/PrefixHeader.pch;
 				INFOPLIST_FILE = ContractMerchants/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"Mantle\"",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				OTHER_LIBTOOLFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JM.ContractMerchants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

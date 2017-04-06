@@ -11,4 +11,4 @@
 
 #define arriveDefinition          @"arriveDefinition"
 
-#endif /* noticeConstant_h */
+#endif
