@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  ContractMerchants
+//
+//  Created by joker on 2017/4/5.
+//  Copyright © 2017年 joker. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "constants.h"
+#import "constanscode.h"
+#import "noticeConstant.h"
+
+#import "UIView+additions.h"
+
+#import "Masonry.h"
+#import "AFNetworking.h"
+
+#endif /* PrefixHeader_pch */
