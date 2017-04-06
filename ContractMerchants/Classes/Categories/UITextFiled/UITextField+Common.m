@@ -17,7 +17,6 @@
 
 @implementation UITextField (Common)
 - (BOOL)commonLengthValidate:(NSString **)errorMessage prefixErrorMessage:(NSString *)prefixErrorMessage minLength:(int) minLength maxLenth:(int) maxLength{
-    
     //长度验证
     if(![IPhoneAndPwdSingleton isLengthAllGivenLength:self.text maxlength:maxLength minlength:minLength])
     {
@@ -137,7 +136,6 @@
             }
         }
     }
-    
     return YES;
 }
 - (BOOL)numberverifyCodeValidate:(NSString **)errorMessage prefixErrorMessage:(NSString *)prefixErrorMessage{

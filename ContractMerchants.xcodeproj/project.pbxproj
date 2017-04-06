@@ -15,6 +15,9 @@
 		F30733031E94F207005878F0 /* ContractMerchantsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F30733021E94F207005878F0 /* ContractMerchantsUITests.m */; };
 		F37518AB1E95DBC400CA4E2E /* UITextField+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */; };
 		F37518B21E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518B11E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m */; };
+		F37518B91E96184900CA4E2E /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518B81E96184900CA4E2E /* BaseTabBarController.m */; };
+		F37518BD1E96194200CA4E2E /* CMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518BC1E96194200CA4E2E /* CMTabBar.m */; };
+		F37518C01E96196000CA4E2E /* CMTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518BF1E96196000CA4E2E /* CMTabBarButton.m */; };
 		F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A51E94F6850027D926 /* BaesTableViewCell.m */; };
 		F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A91E94F6850027D926 /* BaseTableView.m */; };
 		F3C116E21E94F6850027D926 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116AB1E94F6850027D926 /* BaseViewController.m */; };
@@ -77,6 +80,12 @@
 		F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Common.m"; sourceTree = "<group>"; };
 		F37518B01E95DCE200CA4E2E /* IPhoneAndPwdSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneAndPwdSingleton.h; sourceTree = "<group>"; };
 		F37518B11E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneAndPwdSingleton.m; sourceTree = "<group>"; };
+		F37518B71E96184900CA4E2E /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		F37518B81E96184900CA4E2E /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		F37518BB1E96194200CA4E2E /* CMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTabBar.h; sourceTree = "<group>"; };
+		F37518BC1E96194200CA4E2E /* CMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTabBar.m; sourceTree = "<group>"; };
+		F37518BE1E96196000CA4E2E /* CMTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTabBarButton.h; sourceTree = "<group>"; };
+		F37518BF1E96196000CA4E2E /* CMTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTabBarButton.m; sourceTree = "<group>"; };
 		F3C116A01E94F5ED0027D926 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F3C116A41E94F6850027D926 /* BaesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaesTableViewCell.h; sourceTree = "<group>"; };
 		F3C116A51E94F6850027D926 /* BaesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaesTableViewCell.m; sourceTree = "<group>"; };
@@ -247,6 +256,17 @@
 			path = Validate;
 			sourceTree = "<group>";
 		};
+		F37518BA1E96191600CA4E2E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F37518BB1E96194200CA4E2E /* CMTabBar.h */,
+				F37518BC1E96194200CA4E2E /* CMTabBar.m */,
+				F37518BE1E96196000CA4E2E /* CMTabBarButton.h */,
+				F37518BF1E96196000CA4E2E /* CMTabBarButton.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		F3C1169D1E94F56C0027D926 /* Img sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +324,8 @@
 				F3C116A51E94F6850027D926 /* BaesTableViewCell.m */,
 				F3C116AA1E94F6850027D926 /* BaseViewController.h */,
 				F3C116AB1E94F6850027D926 /* BaseViewController.m */,
+				F37518B71E96184900CA4E2E /* BaseTabBarController.h */,
+				F37518B81E96184900CA4E2E /* BaseTabBarController.m */,
 				F3C116F91E95CFA70027D926 /* BasePageViewController.h */,
 				F3C116FA1E95CFA70027D926 /* BasePageViewController.m */,
 			);
@@ -414,6 +436,7 @@
 		F3C116CE1E94F6850027D926 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F37518BA1E96191600CA4E2E /* TabBar */,
 				F37518AF1E95DCE200CA4E2E /* Validate */,
 			);
 			path = Utilities;
@@ -714,6 +737,7 @@
 				F3C116E41E94F6850027D926 /* UIImage+blur.m in Sources */,
 				F3C116ED1E94F6850027D926 /* LoginViewController.m in Sources */,
 				F3C116E21E94F6850027D926 /* BaseViewController.m in Sources */,
+				F37518C01E96196000CA4E2E /* CMTabBarButton.m in Sources */,
 				F30732E51E94F207005878F0 /* main.m in Sources */,
 				F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */,
 				F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */,
@@ -723,12 +747,14 @@
 				F3C116F01E94F6850027D926 /* VerifyView.m in Sources */,
 				F3C116FB1E95CFA70027D926 /* BasePageViewController.m in Sources */,
 				F3C116EF1E94F6850027D926 /* LoginView.m in Sources */,
+				F37518BD1E96194200CA4E2E /* CMTabBar.m in Sources */,
 				F3C116EE1E94F6850027D926 /* LoginHandle.m in Sources */,
 				F3C116EC1E94F6850027D926 /* LoginUser.m in Sources */,
 				F3C116E71E94F6850027D926 /* UIView+instrument.m in Sources */,
 				F3C117091E95D51F0027D926 /* NSDictionary+Common.m in Sources */,
 				F37518AB1E95DBC400CA4E2E /* UITextField+Common.m in Sources */,
 				F3C117021E95D2C00027D926 /* JMHTTPSessionManager.m in Sources */,
+				F37518B91E96184900CA4E2E /* BaseTabBarController.m in Sources */,
 				F3C116FF1E95D28E0027D926 /* JMHTTPResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

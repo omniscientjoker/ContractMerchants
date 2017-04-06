@@ -13,6 +13,9 @@
 #import "VerifyView.h"
 #import "LoginHandle.h"
 
+#import "BaseTabBarController.h"
+#import "AppDelegate.h"
+
 #define kLoginLogoTopHeight   80
 #define kLoginLogoHeight ([Common getResolutionType]*10+60)
 #define kLoginViewHeight ([Common getResolutionType]*10+20)
@@ -177,15 +180,24 @@
     [handle autoLoginHandleWithUserName:@"" PassWord:@""];
 }
 #pragma mark handle
-//auto
 -(void)autoLoginSuccessed
 {
     [UIView animateWithDuration:0.1 animations:^{
         self.view.alpha = 0.8;
     } completion:^(BOOL finished) {
-        
-        NSLog(@"success");
-        
+        if([LoginUser sharedInstance].isNotFirstLogin&&[BaseTabBarController sharedInstance].isLive)
+        {
+            [LoginUser sharedInstance].isNotFirstLogin=NO;
+            [BaseTabBarController logout];
+            [[BaseTabBarController sharedInstance] initTabbar];
+            [[BaseTabBarController sharedInstance].navigationController popToRootViewControllerAnimated:NO];
+            [[BaseTabBarController sharedInstance] setSelectedIndex:0];
+            [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            }];
+        }else{
+            [[BaseTabBarController sharedInstance] initTabbarUI];
+            [AppDelegate sharedInstance].window.rootViewController = [AppDelegate sharedInstance].rootNaviController;
+        }
     }];
 }
 -(void)autoLoginFailed
@@ -204,7 +216,19 @@
     [UIView animateWithDuration:0.1 animations:^{
         self.view.alpha = 0.8;
     } completion:^(BOOL finished) {
-        NSLog(@"success");
+        if([LoginUser sharedInstance].isNotFirstLogin&&[BaseTabBarController sharedInstance].isLive)
+        {
+            [LoginUser sharedInstance].isNotFirstLogin=NO;
+            [BaseTabBarController logout];
+            [[BaseTabBarController sharedInstance] initTabbar];
+            [[BaseTabBarController sharedInstance].navigationController popToRootViewControllerAnimated:NO];
+            [[BaseTabBarController sharedInstance] setSelectedIndex:0];
+            [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            }];
+        }else{
+            [[BaseTabBarController sharedInstance] initTabbarUI];
+            [AppDelegate sharedInstance].window.rootViewController = [AppDelegate sharedInstance].rootNaviController;
+        }
     }];
 }
 -(void)loginViewFailed{
@@ -227,7 +251,19 @@
     [UIView animateWithDuration:0.1 animations:^{
         self.view.alpha = 0.8;
     } completion:^(BOOL finished) {
-        NSLog(@"success");
+        if([LoginUser sharedInstance].isNotFirstLogin&&[BaseTabBarController sharedInstance].isLive)
+        {
+            [LoginUser sharedInstance].isNotFirstLogin=NO;
+            [BaseTabBarController logout];
+            [[BaseTabBarController sharedInstance] initTabbar];
+            [[BaseTabBarController sharedInstance].navigationController popToRootViewControllerAnimated:NO];
+            [[BaseTabBarController sharedInstance] setSelectedIndex:0];
+            [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            }];
+        }else{
+            [[BaseTabBarController sharedInstance] initTabbarUI];
+            [AppDelegate sharedInstance].window.rootViewController = [AppDelegate sharedInstance].rootNaviController;
+        }
     }];
 }
 -(void)VerifyViewFailed{
