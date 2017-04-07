@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+
+#import <NIMSDK/NIMSDK.h>
+
 #import "LoginUser.h"
 #import "BaseTabBarController.h"
 #import "LoginViewController.h"
@@ -23,6 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //云信
+    [[NIMSDK sharedSDK] registerWithAppID:@""
+                                  cerName:@""];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -36,25 +42,6 @@
     self.window.rootViewController =  [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
     
     [self.window makeKeyAndVisible];
-    
-//    ADlunchView = [[UIView alloc] init];
-//    ADlunchView.backgroundColor = [UIColor clearColor];
-//    ADlunchView.frame = CGRectMake(0, 0, self.window.screen.bounds.size.width, self.window.screen.bounds.size.height);
-//    [self.window addSubview:ADlunchView];
-//    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
-//    NSString *bannerName=@"";
-//    
-//    if([LoginUser sharedInstance].isAdvertisement){
-//        bannerName=[LoginUser sharedInstance].advertisementPhoto==nil?bannerName:[LoginUser sharedInstance].advertisementPhoto;
-//        if([LoginUser sharedInstance].isAdvertisementClick){
-//            ADlunchView.userInteractionEnabled=NO;
-//        }
-//    }else{
-//        imageView.image=[UIImage imageNamed:bannerName];
-//    }
-//    [ADlunchView addSubview:imageView];
-//    [self.window bringSubviewToFront:ADlunchView];
-//    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(removeLun) userInfo:nil repeats:NO];
     return YES;
 }
 -(void)removeLun{

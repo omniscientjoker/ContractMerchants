@@ -8,6 +8,10 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
+#import "Masonry.h"
+#import "AFNetworking.h"
+
+#import "common.h"
 #import "constants.h"
 #import "BlockDefine.h"
 #import "constanscode.h"
@@ -15,7 +19,8 @@
 
 #import "UIView+additions.h"
 
-#import "Masonry.h"
-#import "AFNetworking.h"
+#import "BaseViewController.h"
+
+
 
 #endif /* PrefixHeader_pch */

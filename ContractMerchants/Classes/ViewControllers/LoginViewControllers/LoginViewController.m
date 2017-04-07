@@ -14,6 +14,7 @@
 #import "LoginHandle.h"
 
 #import "BaseTabBarController.h"
+#import <NIMSDK/NIMSDK.h>
 #import "AppDelegate.h"
 
 #define kLoginLogoTopHeight   80
@@ -40,12 +41,14 @@
 @implementation LoginViewController
 @synthesize Login,verifyView,showLogin,showVerify,closeBtn,backView;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [LoginUser parseLoginUserInfoFromUserDefaults];
     [self initLoginUI];
 }
+
+#pragma mark initUI界面
+//Login界面
 -(void) initLoginUI{
     self.view.backgroundColor = RGB(253, 103, 0);
     
@@ -63,7 +66,9 @@
      }];
     
     if([LoginUser sharedInstance].isAutoLogin){
-        [self autoLoginHandle];
+        LoginHandle * handle = [[LoginHandle alloc] init];
+        handle.delegate = self;
+        [handle autoLoginHandleWithUserName:@"" PassWord:@""];
     }else{
         [self.launchImageView removeFromSuperview];
         showLogin = [[UIButton alloc] init];
@@ -102,7 +107,6 @@
         [self.view addSubview:closeBtn];
     }
 }
-#pragma mark initUI界面
 //密码登录
 -(void)initLoginView
 {
@@ -165,43 +169,19 @@
     [self positionAnimationLableView:showVerify Point:CGPointMake(SCREENWIDTH+80, 160+LoginViewHeight)];
     backView.hidden = NO;
 }
--(void)clickCloseButton:(id)sender
-{
+-(void)clickCloseButton:(id)sender{
     [self removeViewFromWindow];
 }
 -(void)Actiondo{
     [self.view endEditing:YES];
 }
 
-#pragma mark - 登录验证
--(void) autoLoginHandle{
-    LoginHandle * handle = [[LoginHandle alloc] init];
-    handle.delegate = self;
-    [handle autoLoginHandleWithUserName:@"" PassWord:@""];
-}
+
 #pragma mark handle
--(void)autoLoginSuccessed
-{
-    [UIView animateWithDuration:0.1 animations:^{
-        self.view.alpha = 0.8;
-    } completion:^(BOOL finished) {
-        if([LoginUser sharedInstance].isNotFirstLogin&&[BaseTabBarController sharedInstance].isLive)
-        {
-            [LoginUser sharedInstance].isNotFirstLogin=NO;
-            [BaseTabBarController logout];
-            [[BaseTabBarController sharedInstance] initTabbar];
-            [[BaseTabBarController sharedInstance].navigationController popToRootViewControllerAnimated:NO];
-            [[BaseTabBarController sharedInstance] setSelectedIndex:0];
-            [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            }];
-        }else{
-            [[BaseTabBarController sharedInstance] initTabbarUI];
-            [AppDelegate sharedInstance].window.rootViewController = [AppDelegate sharedInstance].rootNaviController;
-        }
-    }];
+-(void)autoLoginSuccessed{
+    [self loginsuccessedHandle];
 }
--(void)autoLoginFailed
-{
+-(void)autoLoginFailed{
     [LoginUser sharedInstance].isAutoLogin=NO;
     [self initLoginUI];
 }
@@ -210,32 +190,18 @@
     [self loading];
     Login.hidden = YES;
     closeBtn.hidden = YES;
+    showVerify.hidden = YES;
 }
 -(void)loginViewSuccessed{
     [self closeLoading];
-    [UIView animateWithDuration:0.1 animations:^{
-        self.view.alpha = 0.8;
-    } completion:^(BOOL finished) {
-        if([LoginUser sharedInstance].isNotFirstLogin&&[BaseTabBarController sharedInstance].isLive)
-        {
-            [LoginUser sharedInstance].isNotFirstLogin=NO;
-            [BaseTabBarController logout];
-            [[BaseTabBarController sharedInstance] initTabbar];
-            [[BaseTabBarController sharedInstance].navigationController popToRootViewControllerAnimated:NO];
-            [[BaseTabBarController sharedInstance] setSelectedIndex:0];
-            [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            }];
-        }else{
-            [[BaseTabBarController sharedInstance] initTabbarUI];
-            [AppDelegate sharedInstance].window.rootViewController = [AppDelegate sharedInstance].rootNaviController;
-        }
-    }];
+    [self loginsuccessedHandle];
 }
 -(void)loginViewFailed{
     [self closeLoading];
     [self showErrorAlertWithMessage:@"登录失败，请确认账号密码是否正确"];
     Login.hidden = NO;
     closeBtn.hidden = NO;
+    showVerify.hidden = NO;
 }
 //verify
 -(void)VerifyViewWillStarted{
@@ -248,9 +214,23 @@
 }
 -(void)VerifyViewSuccessed{
     [self closeLoading];
+    [self loginsuccessedHandle];
+}
+-(void)VerifyViewFailed{
+    [self closeLoading];
+    [self showErrorAlertWithMessage:@"登录失败，请确认账号密码是否正确"];
+    verifyView.hidden = NO;
+    closeBtn.hidden = NO;
+}
+
+#pragma mark loginSuccess
+-(void)loginsuccessedHandle{
     [UIView animateWithDuration:0.1 animations:^{
         self.view.alpha = 0.8;
     } completion:^(BOOL finished) {
+        [[[NIMSDK sharedSDK] loginManager] login:@""
+                                           token:@""
+                                      completion:^(NSError *error) {}];
         if([LoginUser sharedInstance].isNotFirstLogin&&[BaseTabBarController sharedInstance].isLive)
         {
             [LoginUser sharedInstance].isNotFirstLogin=NO;
@@ -266,13 +246,6 @@
         }
     }];
 }
--(void)VerifyViewFailed{
-    [self closeLoading];
-    [self showErrorAlertWithMessage:@"登录失败，请确认账号密码是否正确"];
-    verifyView.hidden = NO;
-    closeBtn.hidden = NO;
-}
-
 
 #pragma UIView实现动画
 -(void)removeViewFromWindow

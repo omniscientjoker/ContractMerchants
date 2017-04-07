@@ -18,6 +18,21 @@
 		F37518B91E96184900CA4E2E /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518B81E96184900CA4E2E /* BaseTabBarController.m */; };
 		F37518BD1E96194200CA4E2E /* CMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518BC1E96194200CA4E2E /* CMTabBar.m */; };
 		F37518C01E96196000CA4E2E /* CMTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518BF1E96196000CA4E2E /* CMTabBarButton.m */; };
+		F37518C81E9722FC00CA4E2E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518C71E9722FC00CA4E2E /* HomeViewController.m */; };
+		F37518CB1E97230B00CA4E2E /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518CA1E97230B00CA4E2E /* MarketViewController.m */; };
+		F37518CE1E97231E00CA4E2E /* ShopingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518CD1E97231E00CA4E2E /* ShopingCartViewController.m */; };
+		F37518D11E97232E00CA4E2E /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518D01E97232E00CA4E2E /* MessageViewController.m */; };
+		F37518D31E9759D600CA4E2E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518D21E9759D600CA4E2E /* CoreMedia.framework */; };
+		F37518D51E9759E400CA4E2E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518D41E9759E400CA4E2E /* AudioToolbox.framework */; };
+		F37518D71E9759EC00CA4E2E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518D61E9759EC00CA4E2E /* AVFoundation.framework */; };
+		F37518D91E9759F700CA4E2E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518D81E9759F700CA4E2E /* MobileCoreServices.framework */; };
+		F37518DB1E9759FE00CA4E2E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518DA1E9759FE00CA4E2E /* ImageIO.framework */; };
+		F37518DD1E975A1700CA4E2E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518DC1E975A1700CA4E2E /* libc++.tbd */; };
+		F37518DF1E975A1F00CA4E2E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518DE1E975A1F00CA4E2E /* libz.tbd */; };
+		F37518E11E975A2D00CA4E2E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518E01E975A2D00CA4E2E /* libstdc++.6.0.9.tbd */; };
+		F37518E31E975A3600CA4E2E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518E21E975A3600CA4E2E /* libsqlite3.tbd */; };
+		F37518E51E975A4000CA4E2E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518E41E975A4000CA4E2E /* libiconv.tbd */; };
+		F37518E91E976E4000CA4E2E /* CMNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518E81E976E4000CA4E2E /* CMNaviBar.m */; };
 		F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A51E94F6850027D926 /* BaesTableViewCell.m */; };
 		F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A91E94F6850027D926 /* BaseTableView.m */; };
 		F3C116E21E94F6850027D926 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116AB1E94F6850027D926 /* BaseViewController.m */; };
@@ -86,6 +101,26 @@
 		F37518BC1E96194200CA4E2E /* CMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTabBar.m; sourceTree = "<group>"; };
 		F37518BE1E96196000CA4E2E /* CMTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTabBarButton.h; sourceTree = "<group>"; };
 		F37518BF1E96196000CA4E2E /* CMTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTabBarButton.m; sourceTree = "<group>"; };
+		F37518C61E9722FC00CA4E2E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		F37518C71E9722FC00CA4E2E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F37518C91E97230B00CA4E2E /* MarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
+		F37518CA1E97230B00CA4E2E /* MarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
+		F37518CC1E97231E00CA4E2E /* ShopingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopingCartViewController.h; sourceTree = "<group>"; };
+		F37518CD1E97231E00CA4E2E /* ShopingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopingCartViewController.m; sourceTree = "<group>"; };
+		F37518CF1E97232E00CA4E2E /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		F37518D01E97232E00CA4E2E /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		F37518D21E9759D600CA4E2E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F37518D41E9759E400CA4E2E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F37518D61E9759EC00CA4E2E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F37518D81E9759F700CA4E2E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F37518DA1E9759FE00CA4E2E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F37518DC1E975A1700CA4E2E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F37518DE1E975A1F00CA4E2E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F37518E01E975A2D00CA4E2E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F37518E21E975A3600CA4E2E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F37518E41E975A4000CA4E2E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		F37518E71E976E4000CA4E2E /* CMNaviBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNaviBar.h; sourceTree = "<group>"; };
+		F37518E81E976E4000CA4E2E /* CMNaviBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNaviBar.m; sourceTree = "<group>"; };
 		F3C116A01E94F5ED0027D926 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F3C116A41E94F6850027D926 /* BaesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaesTableViewCell.h; sourceTree = "<group>"; };
 		F3C116A51E94F6850027D926 /* BaesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaesTableViewCell.m; sourceTree = "<group>"; };
@@ -147,6 +182,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37518E51E975A4000CA4E2E /* libiconv.tbd in Frameworks */,
+				F37518E31E975A3600CA4E2E /* libsqlite3.tbd in Frameworks */,
+				F37518E11E975A2D00CA4E2E /* libstdc++.6.0.9.tbd in Frameworks */,
+				F37518DF1E975A1F00CA4E2E /* libz.tbd in Frameworks */,
+				F37518DD1E975A1700CA4E2E /* libc++.tbd in Frameworks */,
+				F37518DB1E9759FE00CA4E2E /* ImageIO.framework in Frameworks */,
+				F37518D91E9759F700CA4E2E /* MobileCoreServices.framework in Frameworks */,
+				F37518D71E9759EC00CA4E2E /* AVFoundation.framework in Frameworks */,
+				F37518D51E9759E400CA4E2E /* AudioToolbox.framework in Frameworks */,
+				F37518D31E9759D600CA4E2E /* CoreMedia.framework in Frameworks */,
 				63E73E887AB037FB950FB45D /* libPods-ContractMerchants.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +216,16 @@
 		3C9387CEA3EA8BD4AD03189A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F37518E41E975A4000CA4E2E /* libiconv.tbd */,
+				F37518E21E975A3600CA4E2E /* libsqlite3.tbd */,
+				F37518E01E975A2D00CA4E2E /* libstdc++.6.0.9.tbd */,
+				F37518DE1E975A1F00CA4E2E /* libz.tbd */,
+				F37518DC1E975A1700CA4E2E /* libc++.tbd */,
+				F37518DA1E9759FE00CA4E2E /* ImageIO.framework */,
+				F37518D81E9759F700CA4E2E /* MobileCoreServices.framework */,
+				F37518D61E9759EC00CA4E2E /* AVFoundation.framework */,
+				F37518D41E9759E400CA4E2E /* AudioToolbox.framework */,
+				F37518D21E9759D600CA4E2E /* CoreMedia.framework */,
 				2552F35BE406B051388190BE /* libPods-ContractMerchants.a */,
 			);
 			name = Frameworks;
@@ -265,6 +320,51 @@
 				F37518BF1E96196000CA4E2E /* CMTabBarButton.m */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F37518C11E9722C800CA4E2E /* HomeViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F37518C61E9722FC00CA4E2E /* HomeViewController.h */,
+				F37518C71E9722FC00CA4E2E /* HomeViewController.m */,
+			);
+			path = HomeViewControllers;
+			sourceTree = "<group>";
+		};
+		F37518C21E9722C800CA4E2E /* MarketViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F37518C91E97230B00CA4E2E /* MarketViewController.h */,
+				F37518CA1E97230B00CA4E2E /* MarketViewController.m */,
+			);
+			path = MarketViewControllers;
+			sourceTree = "<group>";
+		};
+		F37518C31E9722C800CA4E2E /* MessageViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F37518CF1E97232E00CA4E2E /* MessageViewController.h */,
+				F37518D01E97232E00CA4E2E /* MessageViewController.m */,
+			);
+			path = MessageViewControllers;
+			sourceTree = "<group>";
+		};
+		F37518C51E9722C800CA4E2E /* ShoppingCartViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F37518CC1E97231E00CA4E2E /* ShopingCartViewController.h */,
+				F37518CD1E97231E00CA4E2E /* ShopingCartViewController.m */,
+			);
+			path = ShoppingCartViewControllers;
+			sourceTree = "<group>";
+		};
+		F37518E61E976E1600CA4E2E /* NaviBar */ = {
+			isa = PBXGroup;
+			children = (
+				F37518E71E976E4000CA4E2E /* CMNaviBar.h */,
+				F37518E81E976E4000CA4E2E /* CMNaviBar.m */,
+			);
+			path = NaviBar;
 			sourceTree = "<group>";
 		};
 		F3C1169D1E94F56C0027D926 /* Img sources */ = {
@@ -436,6 +536,7 @@
 		F3C116CE1E94F6850027D926 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F37518E61E976E1600CA4E2E /* NaviBar */,
 				F37518BA1E96191600CA4E2E /* TabBar */,
 				F37518AF1E95DCE200CA4E2E /* Validate */,
 			);
@@ -446,6 +547,10 @@
 			isa = PBXGroup;
 			children = (
 				F3C116D01E94F6850027D926 /* LoginViewControllers */,
+				F37518C11E9722C800CA4E2E /* HomeViewControllers */,
+				F37518C21E9722C800CA4E2E /* MarketViewControllers */,
+				F37518C51E9722C800CA4E2E /* ShoppingCartViewControllers */,
+				F37518C31E9722C800CA4E2E /* MessageViewControllers */,
 				F3C116DB1E94F6850027D926 /* MineViewControllers */,
 			);
 			path = ViewControllers;
@@ -610,7 +715,7 @@
 				TargetAttributes = {
 					F30732DF1E94F207005878F0 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = S93X337HM6;
+						DevelopmentTeam = 7U64SHU6Y6;
 						ProvisioningStyle = Automatic;
 					};
 					F30732F21E94F207005878F0 = {
@@ -726,11 +831,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C116E61E94F6850027D926 /* UIView+HUDExtensions.m in Sources */,
+				F37518E91E976E4000CA4E2E /* CMNaviBar.m in Sources */,
 				F3C116E31E94F6850027D926 /* UIColor+RGBValues.m in Sources */,
 				F37518B21E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m in Sources */,
 				F3C116EB1E94F6850027D926 /* BaseUser.m in Sources */,
 				F30732E81E94F207005878F0 /* AppDelegate.m in Sources */,
 				F3C116F51E94F89E0027D926 /* UIToolViewTextField.m in Sources */,
+				F37518D11E97232E00CA4E2E /* MessageViewController.m in Sources */,
 				F3C116E91E94F6850027D926 /* common.m in Sources */,
 				F3C117111E95D6730027D926 /* NSString+Common.m in Sources */,
 				F3C116E51E94F6850027D926 /* UIView+additions.m in Sources */,
@@ -742,14 +849,17 @@
 				F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */,
 				F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */,
 				F3C116EA1E94F6850027D926 /* BaseModel.m in Sources */,
+				F37518CE1E97231E00CA4E2E /* ShopingCartViewController.m in Sources */,
 				F3C117051E95D40D0027D926 /* JMNetworkReachabilityManager.m in Sources */,
 				F3C116F11E94F6850027D926 /* MineViewController.m in Sources */,
 				F3C116F01E94F6850027D926 /* VerifyView.m in Sources */,
 				F3C116FB1E95CFA70027D926 /* BasePageViewController.m in Sources */,
 				F3C116EF1E94F6850027D926 /* LoginView.m in Sources */,
 				F37518BD1E96194200CA4E2E /* CMTabBar.m in Sources */,
+				F37518C81E9722FC00CA4E2E /* HomeViewController.m in Sources */,
 				F3C116EE1E94F6850027D926 /* LoginHandle.m in Sources */,
 				F3C116EC1E94F6850027D926 /* LoginUser.m in Sources */,
+				F37518CB1E97230B00CA4E2E /* MarketViewController.m in Sources */,
 				F3C116E71E94F6850027D926 /* UIView+instrument.m in Sources */,
 				F3C117091E95D51F0027D926 /* NSDictionary+Common.m in Sources */,
 				F37518AB1E95DBC400CA4E2E /* UITextField+Common.m in Sources */,
@@ -890,7 +1000,7 @@
 			baseConfigurationReference = 1A283AB8FBCD30D83FB3C04B /* Pods-ContractMerchants.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S93X337HM6;
+				DEVELOPMENT_TEAM = 7U64SHU6Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ContractMerchants/PrefixHeader.pch;
 				INFOPLIST_FILE = ContractMerchants/Info.plist;
@@ -918,7 +1028,7 @@
 					"\"UIKit\"",
 				);
 				OTHER_LIBTOOLFLAGS = "-licucore";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JM.ContractMerchants;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JM.ContractMerchantsJS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -928,7 +1038,7 @@
 			baseConfigurationReference = F91C9D4AF30701F4F2433356 /* Pods-ContractMerchants.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S93X337HM6;
+				DEVELOPMENT_TEAM = 7U64SHU6Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ContractMerchants/PrefixHeader.pch;
 				INFOPLIST_FILE = ContractMerchants/Info.plist;
@@ -956,7 +1066,7 @@
 					"\"UIKit\"",
 				);
 				OTHER_LIBTOOLFLAGS = "-licucore";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JM.ContractMerchants;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JM.ContractMerchantsJS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

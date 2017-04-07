@@ -8,20 +8,63 @@
 
 #import "BaseViewController.h"
 #import "UIView+HUDExtensions.h"
-@interface BaseViewController ()<MBProgressHUDDelegate>{
+@interface BaseViewController ()<MBProgressHUDDelegate,CMNaviBarDelegate,UIGestureRecognizerDelegate>{
     MBProgressHUD *HUD;
 }
 @property (nonatomic, assign) BOOL           isLoadingRequest;
 @property (nonatomic, strong) Block          block;
 @property (nonatomic, strong) UIView        *hudContentView;
+@property (nonatomic, strong) UITableView   *tableView;
+@property (nonatomic, strong) UIImageView   *base_fakeNavigationBarBackgroundImageView;
+@property (nonatomic, strong) UILabel       *base_fakeNavigationBarTitleLabel;
+@property (nonatomic, strong) UIView        *backVIew;
+@property (nonatomic, strong) CMNaviBar     *navigationBar;
 @end
 
 @implementation BaseViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.navigationController.viewControllers.count > 1) {
+        [self.navigationBar addDefaultLeftBackButton];
+    }
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.fd_prefersNavigationBarHidden = YES;
+    [self.view addSubview:self.navigationBar];
+}
+
+- (void)touchViewForCloseKeyBord:(Block)block{
+    if (block == nil) {
+        return;
+    }
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClickDealWith:)];
+    self.block = block;
+    tap.numberOfTapsRequired = 1;
+    tap.delegate = self;
+    [tap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tap];
+}
+- (void)tapClickDealWith:(UITapGestureRecognizer *)tapGestureRecognizer{
+    if (self.block) {
+        self.block();
+    }
+    [self.view endEditing:YES];
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    // 若为UITableViewCellContentView（即点击了tableViewCell），则不截获Touch事件
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]){
+        return NO;
+    }
+    return  YES;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - 文字输入框
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - nav
@@ -225,6 +268,126 @@
     [self.hudContentView removeFromSuperview];
     [hud removeFromSuperview];
     hud = nil;
+}
+
+#pragma mark 配置下拉刷新
+- (UITableView *)getViewTableView{
+    
+    return self.tableView;
+    
+}
+#pragma mark --是否加载完所有数据
+- (void)setLoadDataFinish:(UITableView *) tableView finish:(BOOL) finish{
+    if (tableView == nil) {
+        return;
+    }
+    self.tableView = tableView;
+    if(finish){
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        [self.tableView.mj_footer resetNoMoreData];
+    }
+}
+
+- (void)setupTableViewRefresh:(UITableView *)tableView needsFooterRefresh:(BOOL)isFooterRefresh{
+    if (tableView == nil) {
+        return;
+    }
+    self.tableView = tableView;
+    // 添加动画图片的下拉刷新
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadHeaderTableViewDataSource)];
+    if (isFooterRefresh) {
+        self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(reloadFooterTableViewDataSource)];
+    }
+}
+- (void)setUpTableViewFooterRefresh:(UITableView *)tableView{
+    if (tableView == nil) {
+        return;
+    }
+    self.tableView = tableView;
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(reloadFooterTableViewDataSource)];
+}
+
+#pragma mark Data Source Loading / Reloading Methods
+- (void)reloadHeaderTableViewDataSource{
+    [self.tableView.mj_header endRefreshing];
+}
+
+- (void)reloadFooterTableViewDataSource{
+    [self.tableView.mj_footer endRefreshing];
+    
+}
+
+#pragma mark - fake navigation
+#pragma mark - CustomNavigationBarDelegate
+- (CMNaviBar *)navigationBar{
+    if (_navigationBar == nil) {
+        _navigationBar = [[CMNaviBar alloc] init];
+        _navigationBar.delegate = self;
+        [_navigationBar setBackgroundColor:[UIColor whiteColor]];
+    }
+    return _navigationBar;
+}
+- (void)didCMNaviBarBackAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (UIImageView *)base_fakeNavigationBarBackgroundImageView{
+    if (!_base_fakeNavigationBarBackgroundImageView) {
+        _base_fakeNavigationBarBackgroundImageView = [[UIImageView alloc] initWithImage:[common imageWithColor:COMMON_COLOR andSize:CGSizeMake(SCREENWIDTH, 64)]];
+        _base_fakeNavigationBarBackgroundImageView.frame = CGRectMake(0, 0, SCREENWIDTH, 64);
+        _base_fakeNavigationBarBackgroundImageView.userInteractionEnabled = YES;
+    }
+    return _base_fakeNavigationBarBackgroundImageView;
+}
+- (UILabel *)base_fakeNavigationBarTitleLabel{
+    if (!_base_fakeNavigationBarTitleLabel){
+        _base_fakeNavigationBarTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 20, SCREENWIDTH - 140, 44)];
+        _base_fakeNavigationBarTitleLabel.font = [UIFont systemFontOfSize:22.];
+        _base_fakeNavigationBarTitleLabel.textColor = [UIColor whiteColor];
+        _base_fakeNavigationBarTitleLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _base_fakeNavigationBarTitleLabel;
+}
+- (void)showFakeNavigationBar:(NSString *)title{
+    [self.view addSubview:self.base_fakeNavigationBarBackgroundImageView];
+    if (title.length > 0) {
+        [self.view addSubview:self.base_fakeNavigationBarTitleLabel];
+        self.base_fakeNavigationBarTitleLabel.text = title;
+    }
+}
+- (void)updateFakeNavigationBarTitle:(NSString *)title{
+    if (title.length > 0) {
+        self.base_fakeNavigationBarTitleLabel.text = title;
+    }
+}
+- (void)setFakeNavigationBarTitleView:(UIView *)titleView{
+    [self.view addSubview:self.base_fakeNavigationBarBackgroundImageView];
+    [self.base_fakeNavigationBarTitleLabel removeFromSuperview];
+    self.base_fakeNavigationBarTitleLabel = nil;
+    
+    CGFloat maxWidth = SCREENWIDTH - 140;
+    if (titleView.width > maxWidth) {
+        titleView.frame = CGRectMake(titleView.left, titleView.top, maxWidth, titleView.height);
+    }
+    titleView.center = CGPointMake(self.base_fakeNavigationBarBackgroundImageView.center.x, self.base_fakeNavigationBarBackgroundImageView.center.y + 10);
+    //    titleView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.base_fakeNavigationBarBackgroundImageView addSubview:titleView];
+}
+- (void)setFakeNavigationBarLeftButton:(UIButton *)leftButton{
+    if (leftButton) {
+        leftButton.frame = CGRectMake(70, 20, 70, 44);
+        [self.base_fakeNavigationBarBackgroundImageView addSubview:leftButton];
+    }
+}
+- (void)setFakeNavigationBarRightButton:(UIButton *)rightButton{
+    if (rightButton) {
+        rightButton.frame = CGRectMake(SCREENWIDTH - 70, 20, 70, 44);
+        [self.base_fakeNavigationBarBackgroundImageView addSubview:rightButton];
+    }
+}
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)dealloc{

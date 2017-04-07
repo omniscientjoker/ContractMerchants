@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"我的";
+    self.navigationBar.titleLabel.text = @"我的";
     
 }
 
