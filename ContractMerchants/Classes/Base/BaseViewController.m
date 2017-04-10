@@ -8,24 +8,33 @@
 
 #import "BaseViewController.h"
 #import "UIView+HUDExtensions.h"
-@interface BaseViewController ()<MBProgressHUDDelegate,CMNaviBarDelegate,UIGestureRecognizerDelegate>{
+#import "UISearchTextField.h"
+#import "StationListView.h"
+
+@interface BaseViewController ()<MBProgressHUDDelegate,UISearchTextFieldDelegate,CMNaviBarDelegate,UIGestureRecognizerDelegate,StationListDelegate>{
     MBProgressHUD *HUD;
 }
-@property (nonatomic, assign) BOOL           isLoadingRequest;
-@property (nonatomic, strong) Block          block;
-@property (nonatomic, strong) UIView        *hudContentView;
-@property (nonatomic, strong) UITableView   *tableView;
-@property (nonatomic, strong) UIImageView   *base_fakeNavigationBarBackgroundImageView;
-@property (nonatomic, strong) UILabel       *base_fakeNavigationBarTitleLabel;
-@property (nonatomic, strong) UIView        *backVIew;
-@property (nonatomic, strong) CMNaviBar     *navigationBar;
+@property (nonatomic, assign) BOOL               isLoadingRequest;
+@property (nonatomic, strong) Block              block;
+@property (nonatomic, strong) UIView             *hudContentView;
+@property (nonatomic, strong) UITableView        *tableView;
+@property (nonatomic, strong) UIImageView        *base_fakeNavigationBarBackgroundImageView;
+@property (nonatomic, strong) UILabel            *base_fakeNavigationBarTitleLabel;
+@property (nonatomic, strong) UISearchTextField  *base_fakeNavigationBarSearchField;
+@property (nonatomic, strong) UIButton           *base_fakeNavigationBarSelectedBtn;
+@property (nonatomic, strong) UIView             *backVIew;
+@property (nonatomic, strong) CMNaviBar          *navigationBar;
 @end
 
 @implementation BaseViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _needSearchField = NO;
+    _needSelectBtn   = NO;
     if (self.navigationController.viewControllers.count > 1) {
         [self.navigationBar addDefaultLeftBackButton];
+    }else{
+        
     }
     self.view.backgroundColor = [UIColor whiteColor];
     self.fd_prefersNavigationBarHidden = YES;
@@ -50,8 +59,8 @@
     [self.view endEditing:YES];
 }
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
-    // 若为UITableViewCellContentView（即点击了tableViewCell），则不截获Touch事件
-    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]){
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"])
+    {
         return NO;
     }
     return  YES;
@@ -74,9 +83,6 @@
     }else{
         return NO;
     }
-}
-- (void)configUIAppearance{
-    NSLog(@"base config ui ");
 }
 - (void)animatedPopViewController{
     [self.navigationController popViewControllerAnimated:YES];
@@ -316,11 +322,9 @@
 
 - (void)reloadFooterTableViewDataSource{
     [self.tableView.mj_footer endRefreshing];
-    
 }
 
 #pragma mark - fake navigation
-#pragma mark - CustomNavigationBarDelegate
 - (CMNaviBar *)navigationBar{
     if (_navigationBar == nil) {
         _navigationBar = [[CMNaviBar alloc] init];
@@ -340,6 +344,35 @@
     }
     return _base_fakeNavigationBarBackgroundImageView;
 }
+- (UISearchTextField *)base_fakeNavigationBarSearchField{
+    if (!_base_fakeNavigationBarSearchField) {
+        _base_fakeNavigationBarSearchField = [[UISearchTextField alloc] init];
+        _base_fakeNavigationBarSearchField.searchdelegate = self;
+        _base_fakeNavigationBarSearchField.placeholder = @"    品名/规格/钢厂/材质";
+        _base_fakeNavigationBarSearchField.frame = CGRectMake(SCREENWIDTH/4, 28, SCREENWIDTH/2, 28);
+        _base_fakeNavigationBarSearchField.layer.masksToBounds = YES;
+        _base_fakeNavigationBarSearchField.layer.cornerRadius  = 6.0f;
+        _base_fakeNavigationBarSearchField.layer.borderWidth   = 1.0f;
+        _base_fakeNavigationBarSearchField.layer.borderColor   = [UIColor colorWithRed:14/255.0 green:174/255.0 blue:131/255.0 alpha:1].CGColor;
+        _base_fakeNavigationBarSearchField.userInteractionEnabled = YES;
+    }
+    return _base_fakeNavigationBarSearchField;
+}
+- (UIButton *)base_fakeNavigationBarSelectedBtn{
+    if (!_base_fakeNavigationBarSelectedBtn) {
+        _base_fakeNavigationBarSelectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _base_fakeNavigationBarSelectedBtn.frame = CGRectMake(SCREENWIDTH-SCREENWIDTH/4+10, 28, SCREENWIDTH/4-15, 28);
+        _base_fakeNavigationBarSelectedBtn.backgroundColor = [UIColor clearColor];
+        [_base_fakeNavigationBarSelectedBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
+        _base_fakeNavigationBarSelectedBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        [_base_fakeNavigationBarSelectedBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_base_fakeNavigationBarSelectedBtn setTitle:@"宁南站" forState:UIControlStateNormal];
+        [_base_fakeNavigationBarSelectedBtn setImage:[UIImage imageNamed:@"icon_arrowdown_img"] forState:UIControlStateNormal];
+        _base_fakeNavigationBarSelectedBtn.titleEdgeInsets = UIEdgeInsetsMake(0,-20,0,0);
+        _base_fakeNavigationBarSelectedBtn.imageEdgeInsets = UIEdgeInsetsMake(0,60,0,0);
+    }
+    return _base_fakeNavigationBarSelectedBtn;
+}
 - (UILabel *)base_fakeNavigationBarTitleLabel{
     if (!_base_fakeNavigationBarTitleLabel){
         _base_fakeNavigationBarTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 20, SCREENWIDTH - 140, 44)];
@@ -349,29 +382,58 @@
     }
     return _base_fakeNavigationBarTitleLabel;
 }
+- (void)showFakeNavigationBarSelectedBtn{
+     [self.view addSubview:self.base_fakeNavigationBarSelectedBtn];
+}
+- (void)showFakeNavigationSearchField{
+    [self.view addSubview:self.base_fakeNavigationBarSearchField];
+}
+
 - (void)showFakeNavigationBar:(NSString *)title{
-    [self.view addSubview:self.base_fakeNavigationBarBackgroundImageView];
-    if (title.length > 0) {
-        [self.view addSubview:self.base_fakeNavigationBarTitleLabel];
-        self.base_fakeNavigationBarTitleLabel.text = title;
+    if (_needSelectBtn) {
+        [self.view addSubview:self.base_fakeNavigationBarSelectedBtn];
+    }
+    if (_needSearchField) {
+        [self.view addSubview:self.base_fakeNavigationBarSearchField];
+    }else{
+        [self.view addSubview:self.base_fakeNavigationBarBackgroundImageView];
+        if (title.length > 0) {
+            [self.view addSubview:self.base_fakeNavigationBarTitleLabel];
+            self.base_fakeNavigationBarTitleLabel.text = title;
+        }
+    }
+}
+- (void)updateFakeNavigationSelectedBtnTitle:(NSString *)title{
+    if (_needSelectBtn) {
+        if (_base_fakeNavigationBarSelectedBtn) {
+            self.base_fakeNavigationBarSelectedBtn.titleLabel.text = title;
+        }
     }
 }
 - (void)updateFakeNavigationBarTitle:(NSString *)title{
-    if (title.length > 0) {
-        self.base_fakeNavigationBarTitleLabel.text = title;
+    if (!_needSearchField){
+        if (title.length > 0) {
+            self.base_fakeNavigationBarTitleLabel.text = title;
+        }
     }
 }
 - (void)setFakeNavigationBarTitleView:(UIView *)titleView{
     [self.view addSubview:self.base_fakeNavigationBarBackgroundImageView];
-    [self.base_fakeNavigationBarTitleLabel removeFromSuperview];
-    self.base_fakeNavigationBarTitleLabel = nil;
-    
+    if (_needSelectBtn) {
+        [self.view addSubview:self.base_fakeNavigationBarSelectedBtn];
+    }
+    if (!_needSearchField){
+        [self.base_fakeNavigationBarTitleLabel removeFromSuperview];
+        self.base_fakeNavigationBarTitleLabel = nil;
+    }else{
+        [self.base_fakeNavigationBarSearchField removeFromSuperview];
+        self.base_fakeNavigationBarSearchField = nil;
+    }
     CGFloat maxWidth = SCREENWIDTH - 140;
     if (titleView.width > maxWidth) {
         titleView.frame = CGRectMake(titleView.left, titleView.top, maxWidth, titleView.height);
     }
     titleView.center = CGPointMake(self.base_fakeNavigationBarBackgroundImageView.center.x, self.base_fakeNavigationBarBackgroundImageView.center.y + 10);
-    //    titleView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.base_fakeNavigationBarBackgroundImageView addSubview:titleView];
 }
 - (void)setFakeNavigationBarLeftButton:(UIButton *)leftButton{
@@ -386,6 +448,18 @@
         [self.base_fakeNavigationBarBackgroundImageView addSubview:rightButton];
     }
 }
+
+
+
+-(void)clickSelectBtn:(id)sender{
+    StationListView * listView = [[StationListView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
+    listView.delegate = self;
+    [self.view addSubview:listView];
+}
+-(void)returnselectStation:(NSString *)stationname{
+    [self updateFakeNavigationSelectedBtnTitle:stationname];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }

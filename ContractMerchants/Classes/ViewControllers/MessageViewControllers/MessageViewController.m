@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationBar.titleLabel.text = @"议价";
+    
     [[NIMSDK sharedSDK].loginManager addDelegate:self];
     
     NSString *userID = [[[NIMSDK sharedSDK] loginManager] currentAccount];

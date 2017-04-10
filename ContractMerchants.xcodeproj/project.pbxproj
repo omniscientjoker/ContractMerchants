@@ -33,6 +33,8 @@
 		F37518E31E975A3600CA4E2E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518E21E975A3600CA4E2E /* libsqlite3.tbd */; };
 		F37518E51E975A4000CA4E2E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F37518E41E975A4000CA4E2E /* libiconv.tbd */; };
 		F37518E91E976E4000CA4E2E /* CMNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518E81E976E4000CA4E2E /* CMNaviBar.m */; };
+		F37518EF1E9B147000CA4E2E /* UISearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518EE1E9B147000CA4E2E /* UISearchTextField.m */; };
+		F37518F31E9B4E4800CA4E2E /* StationListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518F21E9B4E4800CA4E2E /* StationListView.m */; };
 		F3C116DF1E94F6850027D926 /* BaesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A51E94F6850027D926 /* BaesTableViewCell.m */; };
 		F3C116E11E94F6850027D926 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116A91E94F6850027D926 /* BaseTableView.m */; };
 		F3C116E21E94F6850027D926 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C116AB1E94F6850027D926 /* BaseViewController.m */; };
@@ -121,6 +123,10 @@
 		F37518E41E975A4000CA4E2E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		F37518E71E976E4000CA4E2E /* CMNaviBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNaviBar.h; sourceTree = "<group>"; };
 		F37518E81E976E4000CA4E2E /* CMNaviBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNaviBar.m; sourceTree = "<group>"; };
+		F37518ED1E9B147000CA4E2E /* UISearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISearchTextField.h; sourceTree = "<group>"; };
+		F37518EE1E9B147000CA4E2E /* UISearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISearchTextField.m; sourceTree = "<group>"; };
+		F37518F11E9B4E4800CA4E2E /* StationListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationListView.h; sourceTree = "<group>"; };
+		F37518F21E9B4E4800CA4E2E /* StationListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationListView.m; sourceTree = "<group>"; };
 		F3C116A01E94F5ED0027D926 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F3C116A41E94F6850027D926 /* BaesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaesTableViewCell.h; sourceTree = "<group>"; };
 		F3C116A51E94F6850027D926 /* BaesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaesTableViewCell.m; sourceTree = "<group>"; };
@@ -367,6 +373,15 @@
 			path = NaviBar;
 			sourceTree = "<group>";
 		};
+		F37518F01E9B4E2E00CA4E2E /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				F37518F11E9B4E4800CA4E2E /* StationListView.h */,
+				F37518F21E9B4E4800CA4E2E /* StationListView.m */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
 		F3C1169D1E94F56C0027D926 /* Img sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,8 +409,8 @@
 		F3C116A11E94F6850027D926 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F3C116A21E94F6850027D926 /* 3rdLibrarys */,
 				F3C116A31E94F6850027D926 /* Base */,
+				F3C116A21E94F6850027D926 /* 3rdLibrarys */,
 				F3C116AC1E94F6850027D926 /* Categories */,
 				F3C116BD1E94F6850027D926 /* Common */,
 				F3C116C01E94F6850027D926 /* Constant */,
@@ -599,6 +614,7 @@
 		F3C116DE1E94F6850027D926 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F37518F01E9B4E2E00CA4E2E /* StationList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -606,6 +622,8 @@
 		F3C116F21E94F8730027D926 /* UITextFiled */ = {
 			isa = PBXGroup;
 			children = (
+				F37518ED1E9B147000CA4E2E /* UISearchTextField.h */,
+				F37518EE1E9B147000CA4E2E /* UISearchTextField.m */,
 				F3C116F31E94F89E0027D926 /* UIToolViewTextField.h */,
 				F3C116F41E94F89E0027D926 /* UIToolViewTextField.m */,
 				F37518A91E95DBC400CA4E2E /* UITextField+Common.h */,
@@ -852,12 +870,14 @@
 				F37518CE1E97231E00CA4E2E /* ShopingCartViewController.m in Sources */,
 				F3C117051E95D40D0027D926 /* JMNetworkReachabilityManager.m in Sources */,
 				F3C116F11E94F6850027D926 /* MineViewController.m in Sources */,
+				F37518EF1E9B147000CA4E2E /* UISearchTextField.m in Sources */,
 				F3C116F01E94F6850027D926 /* VerifyView.m in Sources */,
 				F3C116FB1E95CFA70027D926 /* BasePageViewController.m in Sources */,
 				F3C116EF1E94F6850027D926 /* LoginView.m in Sources */,
 				F37518BD1E96194200CA4E2E /* CMTabBar.m in Sources */,
 				F37518C81E9722FC00CA4E2E /* HomeViewController.m in Sources */,
 				F3C116EE1E94F6850027D926 /* LoginHandle.m in Sources */,
+				F37518F31E9B4E4800CA4E2E /* StationListView.m in Sources */,
 				F3C116EC1E94F6850027D926 /* LoginUser.m in Sources */,
 				F37518CB1E97230B00CA4E2E /* MarketViewController.m in Sources */,
 				F3C116E71E94F6850027D926 /* UIView+instrument.m in Sources */,

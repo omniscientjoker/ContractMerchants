@@ -16,6 +16,8 @@
 #define CMWeakSelfDefine __weak __typeof(&*self) weakSelf = self
 
 @interface BaseViewController : UIViewController
+@property (nonatomic, assign) BOOL needSearchField;
+@property (nonatomic, assign) BOOL needSelectBtn;
 @property (nonatomic, assign) BOOL autoHideBackButton;
 @property (nonatomic, assign) BOOL tockenConfirmFaill;
 @property (nonatomic, strong) NSString * lastRequest;
@@ -23,7 +25,6 @@
 @property (nonatomic, strong, readonly) CMNaviBar *navigationBar;
 
 - (void)touchViewForCloseKeyBord:(Block)block;
-- (void)configUIAppearance;
 
 - (void)animatedPopViewController;
 - (void)registerKeyBordChangeFrameAction;
@@ -31,12 +32,16 @@
 
 #pragma mark navbar
 - (BOOL)navigationControllerIsWillDealloc;
+- (void)showFakeNavigationSearchField;
+- (void)showFakeNavigationBarSelectedBtn;
 - (void)showFakeNavigationBar:(NSString *)title;
+- (void)updateFakeNavigationSelectedBtnTitle:(NSString *)title;
 - (void)updateFakeNavigationBarTitle:(NSString *)title;
 - (void)setFakeNavigationBarTitleView:(UIView *)titleView;
 - (void)setFakeNavigationBarLeftButton:(UIButton *)leftButton;
 - (void)setFakeNavigationBarRightButton:(UIButton *)rightButton;
 
+-(void)clickSelectBtn:(id)sender;
 #pragma mark - aleartmessage
 //message
 - (void)showSuccessAlertWithMessage:(NSString *)message;
