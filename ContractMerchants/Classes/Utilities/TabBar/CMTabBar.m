@@ -16,18 +16,18 @@
 
 @implementation CMTabBar
 - (void)addButtonWithImage:(UIImage *)image selectedImage:(UIImage *)selectedImage Title:(NSString *)title{
+    
     UIButton *btn = [[UIButton alloc] init];
-    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 13, (btn.size.width-40)/2);
     [btn setImage:image forState:UIControlStateNormal];
     [btn setImage:selectedImage forState:UIControlStateSelected];
     [btn setAdjustsImageWhenHighlighted:NO];
-    
     [btn setTitle:title forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:12];
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btn setTitleColor:RGB(146, 145, 147) forState:UIControlStateNormal];
     [btn setTitleColor:RGB(249, 101, 32) forState:UIControlStateSelected];
-    btn.titleEdgeInsets = UIEdgeInsetsMake(33, -37.5, 0, 0);
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 13, (btn.size.width-50)/2);
+    btn.titleEdgeInsets = UIEdgeInsetsMake(34, -33, 0, 0);
     [self addSubview:btn];
     [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
 }

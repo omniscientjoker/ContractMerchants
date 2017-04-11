@@ -361,7 +361,7 @@
 - (UIButton *)base_fakeNavigationBarSelectedBtn{
     if (!_base_fakeNavigationBarSelectedBtn) {
         _base_fakeNavigationBarSelectedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _base_fakeNavigationBarSelectedBtn.frame = CGRectMake(SCREENWIDTH-SCREENWIDTH/4+10, 28, SCREENWIDTH/4-15, 28);
+        _base_fakeNavigationBarSelectedBtn.frame = CGRectMake(SCREENWIDTH-SCREENWIDTH/4, 28, SCREENWIDTH/4-10, 28);
         _base_fakeNavigationBarSelectedBtn.backgroundColor = [UIColor clearColor];
         [_base_fakeNavigationBarSelectedBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
         _base_fakeNavigationBarSelectedBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
@@ -369,7 +369,7 @@
         [_base_fakeNavigationBarSelectedBtn setTitle:@"宁南站" forState:UIControlStateNormal];
         [_base_fakeNavigationBarSelectedBtn setImage:[UIImage imageNamed:@"icon_arrowdown_img"] forState:UIControlStateNormal];
         _base_fakeNavigationBarSelectedBtn.titleEdgeInsets = UIEdgeInsetsMake(0,-20,0,0);
-        _base_fakeNavigationBarSelectedBtn.imageEdgeInsets = UIEdgeInsetsMake(0,60,0,0);
+        _base_fakeNavigationBarSelectedBtn.imageEdgeInsets = UIEdgeInsetsMake(0,75,0,0);
     }
     return _base_fakeNavigationBarSelectedBtn;
 }
