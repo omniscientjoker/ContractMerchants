@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.needSearchField = YES;
+    self.needSelectBtn   = YES;
+    [self showFakeNavigationSearchField];
+    [self showFakeNavigationBarSelectedBtn];
 }
 
 - (void)didReceiveMemoryWarning {

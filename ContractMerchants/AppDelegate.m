@@ -39,7 +39,7 @@
     
     [LoginUser parseLoginUserInfoFromUserDefaults];
     
-    self.window.rootViewController =  [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+    self.window.rootViewController =  [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] initWithBarShow:NO]];
     
     [self.window makeKeyAndVisible];
     return YES;

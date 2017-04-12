@@ -18,11 +18,14 @@
 @interface BaseViewController : UIViewController
 @property (nonatomic, assign) BOOL needSearchField;
 @property (nonatomic, assign) BOOL needSelectBtn;
+@property (nonatomic, assign) BOOL needShowNavbar;
 @property (nonatomic, assign) BOOL autoHideBackButton;
 @property (nonatomic, assign) BOOL tockenConfirmFaill;
 @property (nonatomic, strong) NSString * lastRequest;
 @property (nonatomic, assign) BOOL isHttpRequesting;
 @property (nonatomic, strong, readonly) CMNaviBar *navigationBar;
+
+-(instancetype)initWithBarShow:(BOOL)show;
 
 - (void)touchViewForCloseKeyBord:(Block)block;
 
@@ -35,6 +38,7 @@
 - (void)showFakeNavigationSearchField;
 - (void)showFakeNavigationBarSelectedBtn;
 - (void)showFakeNavigationBar:(NSString *)title;
+- (void)hideFakeNavigationBar;
 - (void)updateFakeNavigationSelectedBtnTitle:(NSString *)title;
 - (void)updateFakeNavigationBarTitle:(NSString *)title;
 - (void)setFakeNavigationBarTitleView:(UIView *)titleView;

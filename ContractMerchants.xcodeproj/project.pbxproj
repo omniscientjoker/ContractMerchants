@@ -13,6 +13,8 @@
 		F30732EA1E94F207005878F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30732E91E94F207005878F0 /* Assets.xcassets */; };
 		F30732F81E94F207005878F0 /* ContractMerchantsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F30732F71E94F207005878F0 /* ContractMerchantsTests.m */; };
 		F30733031E94F207005878F0 /* ContractMerchantsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F30733021E94F207005878F0 /* ContractMerchantsUITests.m */; };
+		F348B7241E9DBB530047F5AE /* MineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F348B7231E9DBB530047F5AE /* MineHeadView.m */; };
+		F348B7271E9DC01F0047F5AE /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = F348B7261E9DC01F0047F5AE /* UIImage+Addition.m */; };
 		F37518AB1E95DBC400CA4E2E /* UITextField+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */; };
 		F37518B21E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518B11E95DCE200CA4E2E /* IPhoneAndPwdSingleton.m */; };
 		F37518B91E96184900CA4E2E /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F37518B81E96184900CA4E2E /* BaseTabBarController.m */; };
@@ -93,6 +95,10 @@
 		F30732FE1E94F207005878F0 /* ContractMerchantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContractMerchantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30733021E94F207005878F0 /* ContractMerchantsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContractMerchantsUITests.m; sourceTree = "<group>"; };
 		F30733041E94F207005878F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F348B7221E9DBB530047F5AE /* MineHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeadView.h; sourceTree = "<group>"; };
+		F348B7231E9DBB530047F5AE /* MineHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeadView.m; sourceTree = "<group>"; };
+		F348B7251E9DC01F0047F5AE /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
+		F348B7261E9DC01F0047F5AE /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
 		F37518A91E95DBC400CA4E2E /* UITextField+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Common.h"; sourceTree = "<group>"; };
 		F37518AA1E95DBC400CA4E2E /* UITextField+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Common.m"; sourceTree = "<group>"; };
 		F37518B01E95DCE200CA4E2E /* IPhoneAndPwdSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneAndPwdSingleton.h; sourceTree = "<group>"; };
@@ -308,6 +314,15 @@
 			path = ContractMerchantsUITests;
 			sourceTree = "<group>";
 		};
+		F348B7211E9DBB370047F5AE /* MineHeadView */ = {
+			isa = PBXGroup;
+			children = (
+				F348B7221E9DBB530047F5AE /* MineHeadView.h */,
+				F348B7231E9DBB530047F5AE /* MineHeadView.m */,
+			);
+			path = MineHeadView;
+			sourceTree = "<group>";
+		};
 		F37518AF1E95DCE200CA4E2E /* Validate */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +490,8 @@
 			children = (
 				F3C116B11E94F6850027D926 /* UIImage+blur.h */,
 				F3C116B21E94F6850027D926 /* UIImage+blur.m */,
+				F348B7251E9DC01F0047F5AE /* UIImage+Addition.h */,
+				F348B7261E9DC01F0047F5AE /* UIImage+Addition.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -614,6 +631,7 @@
 		F3C116DE1E94F6850027D926 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F348B7211E9DBB370047F5AE /* MineHeadView */,
 				F37518F01E9B4E2E00CA4E2E /* StationList */,
 			);
 			path = Views;
@@ -855,11 +873,13 @@
 				F3C116EB1E94F6850027D926 /* BaseUser.m in Sources */,
 				F30732E81E94F207005878F0 /* AppDelegate.m in Sources */,
 				F3C116F51E94F89E0027D926 /* UIToolViewTextField.m in Sources */,
+				F348B7241E9DBB530047F5AE /* MineHeadView.m in Sources */,
 				F37518D11E97232E00CA4E2E /* MessageViewController.m in Sources */,
 				F3C116E91E94F6850027D926 /* common.m in Sources */,
 				F3C117111E95D6730027D926 /* NSString+Common.m in Sources */,
 				F3C116E51E94F6850027D926 /* UIView+additions.m in Sources */,
 				F3C116E41E94F6850027D926 /* UIImage+blur.m in Sources */,
+				F348B7271E9DC01F0047F5AE /* UIImage+Addition.m in Sources */,
 				F3C116ED1E94F6850027D926 /* LoginViewController.m in Sources */,
 				F3C116E21E94F6850027D926 /* BaseViewController.m in Sources */,
 				F37518C01E96196000CA4E2E /* CMTabBarButton.m in Sources */,

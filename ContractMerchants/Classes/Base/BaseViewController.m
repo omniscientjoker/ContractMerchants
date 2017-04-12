@@ -27,6 +27,20 @@
 @end
 
 @implementation BaseViewController
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        _needShowNavbar = YES;
+    }
+    return self;
+}
+-(instancetype)initWithBarShow:(BOOL)show{
+    self = [super init];
+    if (self) {
+        _needShowNavbar = show;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _needSearchField = NO;
@@ -38,7 +52,9 @@
     }
     self.view.backgroundColor = [UIColor whiteColor];
     self.fd_prefersNavigationBarHidden = YES;
-    [self.view addSubview:self.navigationBar];
+    if (_needShowNavbar) {
+        [self.view addSubview:self.navigationBar];
+    }
 }
 
 - (void)touchViewForCloseKeyBord:(Block)block{
@@ -333,9 +349,6 @@
     }
     return _navigationBar;
 }
-- (void)didCMNaviBarBackAction{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 - (UIImageView *)base_fakeNavigationBarBackgroundImageView{
     if (!_base_fakeNavigationBarBackgroundImageView) {
         _base_fakeNavigationBarBackgroundImageView = [[UIImageView alloc] initWithImage:[common imageWithColor:COMMON_COLOR andSize:CGSizeMake(SCREENWIDTH, 64)]];
@@ -382,13 +395,37 @@
     }
     return _base_fakeNavigationBarTitleLabel;
 }
+- (void)didCMNaviBarBackAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)showFakeNavigationBarSelectedBtn{
      [self.view addSubview:self.base_fakeNavigationBarSelectedBtn];
 }
 - (void)showFakeNavigationSearchField{
     [self.view addSubview:self.base_fakeNavigationBarSearchField];
 }
-
+- (void)hideFakeNavigationBar{
+    if (_base_fakeNavigationBarTitleLabel) {
+        [self.base_fakeNavigationBarTitleLabel removeFromSuperview];
+        self.base_fakeNavigationBarTitleLabel = nil;
+    }
+    if (_base_fakeNavigationBarSearchField) {
+        [self.base_fakeNavigationBarSearchField removeFromSuperview];
+        self.base_fakeNavigationBarSearchField = nil;
+    }
+    if (_base_fakeNavigationBarSelectedBtn) {
+        [self.base_fakeNavigationBarSelectedBtn removeFromSuperview];
+        self.base_fakeNavigationBarSelectedBtn = nil;
+    }
+    if (_navigationBar) {
+        [self.navigationBar removeFromSuperview];
+        self.navigationBar = nil;
+    }
+    if (_base_fakeNavigationBarBackgroundImageView) {
+        [self.base_fakeNavigationBarBackgroundImageView removeFromSuperview];
+        self.base_fakeNavigationBarBackgroundImageView = nil;
+    }
+}
 - (void)showFakeNavigationBar:(NSString *)title{
     if (_needSelectBtn) {
         [self.view addSubview:self.base_fakeNavigationBarSelectedBtn];
